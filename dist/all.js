@@ -1187,6 +1187,73 @@ Prism.languages.css = { comment: /\/\*[\s\S]*?\*\//, atrule: { pattern: /@[\w-]+
 Prism.languages.clike = { comment: [{ pattern: /(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/, lookbehind: !0 }, { pattern: /(^|[^\\:])\/\/.*/, lookbehind: !0 }], string: { pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/, greedy: !0 }, "class-name": { pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[\w.\\]+/i, lookbehind: !0, inside: { punctuation: /[.\\]/ } }, keyword: /\b(?:if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/, "boolean": /\b(?:true|false)\b/, "function": /[a-z0-9_]+(?=\()/i, number: /\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i, operator: /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/, punctuation: /[{}[\];(),.:]/ };
 Prism.languages.javascript = Prism.languages.extend("clike", { keyword: /\b(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/, number: /\b-?(?:0[xX][\dA-Fa-f]+|0[bB][01]+|0[oO][0-7]+|\d*\.?\d+(?:[Ee][+-]?\d+)?|NaN|Infinity)\b/, "function": /[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*\()/i, operator: /-[-=]?|\+[+=]?|!=?=?|<<?=?|>>?>?=?|=(?:==?|>)?|&[&=]?|\|[|=]?|\*\*?=?|\/=?|~|\^=?|%=?|\?|\.{3}/ }), Prism.languages.insertBefore("javascript", "keyword", { regex: { pattern: /(^|[^\/])\/(?!\/)(\[[^\]\r\n]+]|\\.|[^\/\\\[\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/, lookbehind: !0, greedy: !0 }, "function-variable": { pattern: /[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*=\s*(?:function\b|(?:\([^()]*\)|[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*)\s*=>))/i, alias: "function" } }), Prism.languages.insertBefore("javascript", "string", { "template-string": { pattern: /`(?:\\[\s\S]|[^\\`])*`/, greedy: !0, inside: { interpolation: { pattern: /\$\{[^}]+\}/, inside: { "interpolation-punctuation": { pattern: /^\$\{|\}$/, alias: "punctuation" }, rest: Prism.languages.javascript } }, string: /[\s\S]+/ } } }), Prism.languages.markup && Prism.languages.insertBefore("markup", "tag", { script: { pattern: /(<script[\s\S]*?>)[\s\S]*?(?=<\/script>)/i, lookbehind: !0, inside: Prism.languages.javascript, alias: "language-javascript" } }), Prism.languages.js = Prism.languages.javascript;
 "use strict";
+
+// Declare variables
+var firstName,
+    lastName,
+    gender,
+    email,
+    genderData = [],
+    submitBtn;
+
+submitBtn = document.querySelector("#form-submit");
+
+genderData = [{ list_ndx: "-1", list_display: "Please Select a Value" }, { list_ndx: "1", list_display: "Male" }, { list_ndx: "2", list_display: "Female" }];
+
+firstName = new textInput({
+  container: "#first-name",
+  validation: {
+    enabled: true,
+    value: "blank",
+    message: "Please provide a first name"
+  }
+});
+
+lastName = new textInput({
+  container: "#last-name",
+  validation: {
+    enabled: true,
+    value: "blank",
+    message: "Please provide a last name"
+  }
+});
+
+gender = new Dropdown({
+  container: "#gender",
+  validation: {
+    enabled: true,
+    value: "dropdown",
+    message: "Please select a gender"
+  }
+});
+gender.data = genderData;
+gender.buildDropdown();
+
+email = new textInput({
+  container: "#email",
+  validation: {
+    enabled: true,
+    value: "blank",
+    message: "Please provide a email"
+  }
+});
+
+firstName.val("Ben");
+
+function returnValues() {
+  return {
+    first_name: firstName.val(),
+    last_name: lastName.val(),
+    gender: gender.val(),
+    email: email.val()
+  };
+}
+
+submitBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  var values = returnValues();
+  console.log(values);
+});
 "use strict";
 
 /*! showdown-prettify 04-06-2015 */

@@ -389,6 +389,17 @@ input[type=time] {
   margin-bottom: 15px;
   border-left: 1.5px solid #DDD; }
 
+.error-message {
+  display: block;
+  background-color: #2196F3;
+  color: #FFF;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px; }
+
 /* //////////////////////////////////////////////////////////////////////////////////////
 	PAGE LAYOUT AND COMPONENTS STYLES
 ///////////////////////////////////////////////////////////////////////////////////// */
