@@ -1,0 +1,25 @@
+{
+  "name": "ccbwqa-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel js -d dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.2.1",
+    "gulp-webserver": "^0.9.1"
+  },
+  "dependencies": {
+    "gulp-sourcemaps": "^2.6.4",
+    "showdown-table": "^1.0.1"
+  }
+}

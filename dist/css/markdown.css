@@ -1,0 +1,74 @@
+.markdown pre {
+  overflow-x: scroll; }
+
+.markdown h1 {
+  font-size: 2.6rem;
+  color: #0069c0; }
+
+.markdown h2:before {
+  font-family: 'Material Icons';
+  content: "bookmark";
+  -webkit-font-feature-settings: 'liga';
+  font-size: 2.4rem;
+  left: 0;
+  margin-right: 15px;
+  vertical-align: middle; }
+
+.markdown h2 {
+  border-bottom: 1px solid #DDD;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 45px; }
+
+.markdown h3 {
+  color: #0069c0; }
+
+.markdown p {
+  font-size: 1.2rem;
+  line-height: 1.5; }
+
+.markdown ul:first-of-type {
+  list-style: none; }
+
+.markdown ul li {
+  padding: 4px; }
+
+.markdown ol li {
+  font-size: 1.1rem;
+  padding: 4px; }
+
+.markdown ul:not(:first-of-type) li {
+  font-size: 1.1rem; }
+
+.markdown ul li a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #0069c0; }
+
+.markdown pre {
+  background-color: #F5F5F6;
+  padding: 25px; }
+
+.markdown pre code {
+  font-weight: 300; }
+
+.hljs-keyword {
+  color: #d73a49; }
+
+.hljs-string {
+  color: #6f42c1; }
+
+.markdown .language-SQL .hljs-keyword {
+  color: #2196f3; }
+
+.markdown table th {
+  color: #0069c0; }
+
+.markdown table th,
+.markdown table td p {
+  padding: 12px;
+  border-bottom: 1px solid #DDD;
+  font-size: 0.9rem; }
+
+.markdown table td p {
+  margin: 0; }

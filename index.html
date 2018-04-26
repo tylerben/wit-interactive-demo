@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Material Theme Template</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="css/prism.css">
+	<link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+	<section id="sidebar" class="text-center">
+		<h2 class="sidebar-title text-white"><i class="material-icons md-24 vertical-align-middle">menu</i>Menu</h2>
+		<ul>
+			<li class="active"><a href="index.html"><i class="material-icons md-24 vertical-align-middle">home</i>Menu Item 1</a></li>
+			<li><a href="page2.html"><i class="material-icons md-24 vertical-align-middle">rss_feed</i>Menu Item 2</a></li>
+			<li><a href="page3.html"><i class="material-icons md-24 vertical-align-middle">account_circle</i>Menu Item 3</a></li>
+		</ul>
+	</section>
+	<section id="main-content">
+		<h1 class="page-header">Material Theme Template</h1>
+		<section class="container">
+			<h1 class="text-primary">Demo Page 1</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</section>
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="js/jquery.sticky.js"></script>
+	<script src="js/prism.js"></script>
+	<script src="js/common.js"></script>
+	<script src="dist/all.js"></script>
+	<script>
+		var $inputs = $( 'input' ),
+		    $selects = $( 'select' ),
+		    $textAreas = $( 'textarea'),
+		    $dataNav = $( '.data-nav' ),
+		    $sidebar = $( '#sidebar' );
+
+		// Configure progress stepper on form elements
+		/*$.each($inputs, function() { $( this ).on("focus", stepper); })
+		$.each($inputs, function() { $( this ).on("click", stepper); })
+		$.each($selects, function() { $( this ).on("focus", stepper); })
+		$.each($textAreas, function() { $( this ).on("focus", stepper); })*/
+
+		$dataNav.on("click", navbarToggle);
+		$dataNav.on("click", setSidebarHeight);
+		showNavbarSection($( '#demo-form' ));
+
+        function setSidebarHeight() {
+	        var body = document.body,
+	        	html = document.documentElement;
+
+		    var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+		    $sidebar.height(height);
+
+		    setTimeout(function() {
+		      var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+		      $sidebar.height(height);
+		    }, 300);
+		}
+
+		setSidebarHeight();
+		$sidebar.find('h2').sticky({topSpacing:0});
+    	$sidebar.find('ul').sticky({topSpacing:70.6});
+
+	</script>
+</body>
+</html>

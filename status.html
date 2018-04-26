@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CCBWQA Portal Documentation</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="css/prism.css">
+	<link rel="stylesheet" href="dist/css/style.css">
+
+	<style>
+	</style>
+</head>
+<body>
+	<section id="sidebar" class="text-center">
+		<h2 class="sidebar-title text-white"><i class="material-icons md-24 vertical-align-middle">menu</i>Menu</h2>
+		<ul>
+			<li><a href="index.html"><i class="material-icons md-24 vertical-align-middle">home</i>Overview</a></li>
+			<li class="active"><a href="status.html"><i class="material-icons md-24 vertical-align-middle">rss_feed</i>Status Reports</a></li>
+			<li><a href="docs.html"><i class="material-icons md-24 vertical-align-middle">library_books</i>Docs</a></li>
+			<li><a href="https://github.com/lrewater/mercury-forms" target="_blank"><i class="material-icons md-24 vertical-align-middle">code</i>Source Code</a></li>
+		</ul>
+	</section>
+	<section id="main-content">
+		<h1 class="page-header">CCBWQA Portal Documentation</h1>
+		<div class="container">
+			<h1 class="page-title text-accent text-left">CCBWQA Status Reports</h1>
+			<p class="first-letter">This documentation is intended to serve as a guide to the CCBWQA Data Portal and its various components which can be found at <a href="http://ccbwqportal.org/" target="_blank">http://ccbwqportal.org/</a>. The portal provides the ability to explore different water quality storylines, download data, and import data. This guide provides documentation for the following:</p>
+			<ul class="use-case-list text-accent margin-left">
+				<li>Water Quality Data Import</li>
+			</ul>
+
+			<section>
+				<h2 class="section-title">Automated Data Import | <span class="text-primary">Updated 04/19/2018</span></h2>
+				<p>The Automated Data Import process is still in its beginning stages.</p>
+				<h3>Key Database Tasks</h3>
+				<ul class="check-list">
+					<li><i class="material-icons text-dark vertical-align-middle">check_box_outline_blank</i>Import CSV Function</li>
+					<li><i class="material-icons text-dark vertical-align-middle">check_box</i>Check for New List Values</li>
+					<li><i class="material-icons text-dark vertical-align-middle">check_box</i>Flag Pending Values</li>	
+					<li><i class="material-icons text-dark vertical-align-middle">check_box_outline_blank</i>Associate Pending Values</li>
+					<li><i class="material-icons text-dark vertical-align-middle">check_box_outline_blank</i>Add New List Values</li>
+					<li><i class="material-icons text-dark vertical-align-middle">check_box_outline_blank</i>Write to Master Results Table</li>
+				</ul>
+				<h3>Key Website Tasks</h3>
+				<ul class="check-list">
+					<li><i class="material-icons text-dark vertical-align-middle">check_box_outline_blank</i>CSV Upload Interface</li>
+					<li><i class="material-icons text-dark vertical-align-middle">check_box_outline_blank</i>Pending Records Review Interface</li>
+				</ul>
+			</section>
+		</div>
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="js/jquery.sticky.js"></script>
+	<script>
+		var $sidebar = $( '#sidebar' );
+
+        function setSidebarHeight() {
+	        var body = document.body,
+	        	html = document.documentElement;
+
+		    var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+		    $sidebar.height(height);
+
+		    setTimeout(function() {
+		      var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+		      $sidebar.height(height);
+		    }, 300);
+		}
+
+		setSidebarHeight();
+		$sidebar.find('h2').sticky({topSpacing:0});
+    	$sidebar.find('ul').sticky({topSpacing:70.6});
+	</script>
+</body>
+</html>
